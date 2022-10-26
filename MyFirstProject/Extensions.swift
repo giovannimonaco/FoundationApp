@@ -66,7 +66,7 @@ extension Published where Value: RawRepresentable, Value.RawValue == String {
     }
 }
 
-// Color Codable
+// Color extension to make it conform to Codable
 
 fileprivate extension Color {
     
@@ -113,7 +113,7 @@ extension Color: Codable {
     }
 }
 
-// Random Color Extension
+// Colour extension to obtain a random colour or a random colour among the system colours
 
 extension Color {
     
@@ -132,6 +132,10 @@ extension Color {
     
 }
 
-extension Bool {
-    var value: Int { self ? 1 : 0 }
+// Bool extension to make it conform to Comparable protocol
+
+extension Bool: Comparable {
+    public static func < (lhs: Bool, rhs: Bool) -> Bool {
+        lhs == true
+    }
 }

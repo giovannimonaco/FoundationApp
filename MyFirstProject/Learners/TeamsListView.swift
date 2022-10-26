@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TeamsListView: View {
     
-    @ObservedObject var myData = sharedData
+    @EnvironmentObject var myData : ModelData
     @State private var searchText = ""
     
     var filteredTeams: [Team] {
@@ -61,5 +61,6 @@ struct TeamsListView: View {
 struct TeamsListView_Previews: PreviewProvider {
     static var previews: some View {
         TeamsListView()
+            .environmentObject(ModelData())
     }
 }

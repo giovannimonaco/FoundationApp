@@ -8,19 +8,8 @@
 import SwiftUI
 
 struct LearnerDetailView: View {
-    
    
-    
-    @ObservedObject var myData = sharedData
-    var id: UUID
-    
-    var learner: Learner {
-        myData.learners.first { $0.id == id }!
-    }
-    
-    var learnerIndex: Int {
-        myData.learners.firstIndex { $0.id == id }!
-    }
+    @State var learner: Learner
     
     var body: some View {
         ZStack {
@@ -59,24 +48,16 @@ struct LearnerDetailView: View {
         }
         .toolbar {
             ToolbarItem {
-                StarButtonView(isStarred: $myData.learners[learnerIndex].starred)
+                StarButtonView(isStarred: $learner.starred)
             }
         }
     }
 }
 
 struct LearnerDetailView_Previews: PreviewProvider {
-    static let testingLearner = Learner(
-        name: "Giovanni",
-        surname: "Monaco",
-        favouriteColor: Color("Grape"),
-        description: "🐱",
-        imageName: "person1",
-        starred: true
-    )
     static var previews: some View {
         NavigationStack {
-            //LearnerDetailView(learner: testingLearner)
+            LearnerDetailView(learner: ModelData().learners[0])
         }
     }
 }

@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MyFirstProjectApp: App {
+    
+    @StateObject var sharedData = ModelData()
+    
     var body: some Scene {
         WindowGroup {
             ContainerView()
+                .environmentObject(sharedData)
         }
     }
 }

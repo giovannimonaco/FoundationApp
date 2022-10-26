@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  Learner.swift
 //  MyFirstProject
 //
 //  Created by Giovanni Monaco on 17/10/22.
@@ -21,11 +21,3 @@ struct Learner: Identifiable, Codable {
         starred.toggle()
     }
 }
-
-struct Team: Identifiable, Codable {
-    var id = UUID()
-    var name: String
-    var imageName: String
-    var learners: [Learner]
-}
-

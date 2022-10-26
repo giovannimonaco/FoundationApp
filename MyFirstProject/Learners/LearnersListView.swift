@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LearnersListView: View {
     
-    @ObservedObject var myData = sharedData
+    @EnvironmentObject var myData : ModelData
     @State var newLearnerViewisPresented = false
     @State private var searchText = ""
     
@@ -21,7 +21,7 @@ struct LearnersListView: View {
                     learner1.name <= learner2.name
                 }
                 .sorted { learner1, learner2 in
-                    learner1.starred.value > learner2.starred.value
+                    learner1.starred < learner2.starred
                 }
         }
         set {
@@ -45,7 +45,7 @@ struct LearnersListView: View {
         NavigationStack {
             List {
                 ForEach(filteredAndOrderedLearners) { learner in
-                    NavigationLink(destination: LearnerDetailView(id: learner.id)) {
+                    NavigationLink(destination: LearnerDetailView(learner: learner)) {
                         LearnerRowView(learner: learner)
                     }
                     .swipeActions(edge: .leading, content: {
@@ -93,6 +93,7 @@ struct LearnersListView: View {
 struct LearnersListView_Previews: PreviewProvider {
     static var previews: some View {
         LearnersListView()
+            .environmentObject(ModelData())
     }
 }
 

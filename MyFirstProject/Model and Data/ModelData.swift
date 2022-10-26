@@ -1,5 +1,5 @@
 //
-//  Data.swift
+//  ModelData.swift
 //  FoundationApp
 //
 //  Created by Giovanni Monaco on 05/10/22.
@@ -7,7 +7,11 @@
 
 import SwiftUI
 
-class SharedData: ObservableObject {
+class ModelData: ObservableObject {
+    
+    func add(learner: Learner) {
+        learners.append(learner)
+    }
     
     func delete(learner: Learner) {
         guard let index = learners.firstIndex(where: { $0.id == learner.id }) else { return }
@@ -155,4 +159,4 @@ class SharedData: ObservableObject {
     
 }
 
-var sharedData = SharedData()
+

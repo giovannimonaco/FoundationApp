@@ -41,7 +41,7 @@ struct LearnerRowView: View {
 struct LearnerRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            LearnerRowView(learner: sharedData.learners[0])
+            LearnerRowView(learner: ModelData().learners[0])
                 .previewLayout(PreviewLayout.sizeThatFits)
         }
     }
