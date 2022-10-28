@@ -84,9 +84,6 @@ struct LearnersListView: View {
             }
             .searchable(text: $searchText)
         }
-        .onAppear{
-            print(myData.learners.count)
-        }
     }
 }
 

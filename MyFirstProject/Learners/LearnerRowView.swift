@@ -27,9 +27,9 @@ struct LearnerRowView: View {
             }
             if learner.starred {
                 Spacer()
-                Image(systemName: "star.square.fill")
+                Image(systemName: "star.circle.fill")
                     .resizable()
-                    .frame(width:30, height: 30)
+                    .frame(width: 18, height: 18)
                     .foregroundColor(.yellow)
             }
         }

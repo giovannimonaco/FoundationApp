@@ -9,23 +9,41 @@ import SwiftUI
 
 class ModelData: ObservableObject {
     
+    init() {
+        if let data = UserDefaults.standard.data(forKey: "SavedData") {
+            if let decoded = try? JSONDecoder().decode([Learner].self, from: data) {
+                learners = decoded
+                return
+            }
+        }
+    }
+    
+    func save() {
+        if let encoded = try? JSONEncoder().encode(learners) {
+            UserDefaults.standard.set(encoded, forKey: "SavedData")
+        }
+    }
+    
     func add(learner: Learner) {
         learners.append(learner)
+        save()
     }
     
     func delete(learner: Learner) {
         guard let index = learners.firstIndex(where: { $0.id == learner.id }) else { return }
         learners.remove(at: index)
+        save()
     }
     
     func star(learner: Learner) {
         guard let index = learners.firstIndex(where: { $0.id == learner.id }) else { return }
         learners[index].starred.toggle()
+        save()
     }
     
     @Published var test = ["❤️", "🧡", "💛", "💚", "💙", "💜"]
     
-    @Published(key: "learners") var learners = [
+    @Published var learners = [
         // @Published var learners = [
         Learner(name: "Giovanni", surname: "Monaco", favouriteColor: Color("Grape"), description: "Hello world 🌎", imageName: "person1", starred: true),
         Learner(name: "Morton" , surname: "Trusdale", favouriteColor: .randomSystem(), description: "I love rainbows 🌈", imageName: "person2", starred: true),
@@ -128,7 +146,7 @@ class ModelData: ObservableObject {
     ]
     
     
-    @Published(key: "teams") var teams = [
+    @Published var teams = [
         Team(name: "Red ❤️", imageName: "red", learners: [
             Learner(name: "Morton" , surname: "Trusdale", favouriteColor: .randomSystem()),
             Learner(name: "Hercule" , surname: "Beahan", favouriteColor: .randomSystem()),

@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		69100E29290949340073D9E9 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69100E28290949340073D9E9 /* Team.swift */; };
 		691575DD2907CAAF00C10BB7 /* StarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691575DC2907CAAF00C10BB7 /* StarButtonView.swift */; };
-		691FC18828FED749006472DD /* TeamsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691FC18728FED749006472DD /* TeamsListView.swift */; };
+		691FC18828FED749006472DD /* VTeamsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691FC18728FED749006472DD /* VTeamsListView.swift */; };
 		691FC18A28FEE2F8006472DD /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691FC18928FEE2F8006472DD /* ContainerView.swift */; };
 		691FC18E28FEEFE8006472DD /* NewLearnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691FC18D28FEEFE8006472DD /* NewLearnerView.swift */; };
 		6952946D28EDB7D30017AD2F /* MyFirstProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6952946C28EDB7D30017AD2F /* MyFirstProjectApp.swift */; };
 		6952947128EDB7D40017AD2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6952947028EDB7D40017AD2F /* Assets.xcassets */; };
 		6952947428EDB7D40017AD2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6952947328EDB7D40017AD2F /* Preview Assets.xcassets */; };
 		6952947B28EDB7E60017AD2F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6952947A28EDB7E60017AD2F /* ModelData.swift */; };
-		6960A43229019953003F425C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6960A43129019953003F425C /* Extensions.swift */; };
+		6960A43229019953003F425C /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6960A43129019953003F425C /* Color+Codable.swift */; };
 		6984DD19290812990098349C /* LearnerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6984DD18290812990098349C /* LearnerRowView.swift */; };
+		699453E2290969F700E31D32 /* HTeamsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699453E1290969F700E31D32 /* HTeamsListView.swift */; };
+		69967A7C290BCD1D00712FBF /* Bool+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69967A7B290BCD1D00712FBF /* Bool+Comparable.swift */; };
 		69AF5C7D28FD9B960026A08C /* Learner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF5C7C28FD9B960026A08C /* Learner.swift */; };
 		69AF5C7F28FD9C5B0026A08C /* LearnersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF5C7E28FD9C5B0026A08C /* LearnersListView.swift */; };
 		69AF5C8328FDA3E30026A08C /* LearnerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF5C8228FDA3E30026A08C /* LearnerDetailView.swift */; };
@@ -26,7 +28,7 @@
 /* Begin PBXFileReference section */
 		69100E28290949340073D9E9 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		691575DC2907CAAF00C10BB7 /* StarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButtonView.swift; sourceTree = "<group>"; };
-		691FC18728FED749006472DD /* TeamsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsListView.swift; sourceTree = "<group>"; };
+		691FC18728FED749006472DD /* VTeamsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTeamsListView.swift; sourceTree = "<group>"; };
 		691FC18928FEE2F8006472DD /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		691FC18D28FEEFE8006472DD /* NewLearnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLearnerView.swift; sourceTree = "<group>"; };
 		6952946928EDB7D30017AD2F /* MyFirstProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,8 +36,10 @@
 		6952947028EDB7D40017AD2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6952947328EDB7D40017AD2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6952947A28EDB7E60017AD2F /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		6960A43129019953003F425C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6960A43129019953003F425C /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 		6984DD18290812990098349C /* LearnerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnerRowView.swift; sourceTree = "<group>"; };
+		699453E1290969F700E31D32 /* HTeamsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTeamsListView.swift; sourceTree = "<group>"; };
+		69967A7B290BCD1D00712FBF /* Bool+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Comparable.swift"; sourceTree = "<group>"; };
 		69AF5C7C28FD9B960026A08C /* Learner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learner.swift; sourceTree = "<group>"; };
 		69AF5C7E28FD9C5B0026A08C /* LearnersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnersListView.swift; sourceTree = "<group>"; };
 		69AF5C8228FDA3E30026A08C /* LearnerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnerDetailView.swift; sourceTree = "<group>"; };
@@ -67,7 +71,8 @@
 		69100E26290945B90073D9E9 /* Teams */ = {
 			isa = PBXGroup;
 			children = (
-				691FC18728FED749006472DD /* TeamsListView.swift */,
+				699453E1290969F700E31D32 /* HTeamsListView.swift */,
+				691FC18728FED749006472DD /* VTeamsListView.swift */,
 			);
 			name = Teams;
 			path = Learners;
@@ -107,7 +112,7 @@
 				69100E25290945A30073D9E9 /* Learners */,
 				69100E26290945B90073D9E9 /* Teams */,
 				69100E27290945E30073D9E9 /* Model and Data */,
-				6960A43129019953003F425C /* Extensions.swift */,
+				6996DE13290BCD9B0036E1E7 /* Extensions */,
 				6952947028EDB7D40017AD2F /* Assets.xcassets */,
 				6952947228EDB7D40017AD2F /* Preview Content */,
 			);
@@ -120,6 +125,15 @@
 				6952947328EDB7D40017AD2F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6996DE13290BCD9B0036E1E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6960A43129019953003F425C /* Color+Codable.swift */,
+				69967A7B290BCD1D00712FBF /* Bool+Comparable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,12 +206,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				691FC18828FED749006472DD /* TeamsListView.swift in Sources */,
+				691FC18828FED749006472DD /* VTeamsListView.swift in Sources */,
+				699453E2290969F700E31D32 /* HTeamsListView.swift in Sources */,
 				6952947B28EDB7E60017AD2F /* ModelData.swift in Sources */,
 				691FC18E28FEEFE8006472DD /* NewLearnerView.swift in Sources */,
 				6952946D28EDB7D30017AD2F /* MyFirstProjectApp.swift in Sources */,
-				6960A43229019953003F425C /* Extensions.swift in Sources */,
+				6960A43229019953003F425C /* Color+Codable.swift in Sources */,
 				691FC18A28FEE2F8006472DD /* ContainerView.swift in Sources */,
+				69967A7C290BCD1D00712FBF /* Bool+Comparable.swift in Sources */,
 				69AF5C8328FDA3E30026A08C /* LearnerDetailView.swift in Sources */,
 				69AF5C7F28FD9C5B0026A08C /* LearnersListView.swift in Sources */,
 				691575DD2907CAAF00C10BB7 /* StarButtonView.swift in Sources */,

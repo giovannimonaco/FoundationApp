@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Team: Identifiable, Codable {
+struct Team: Identifiable {
     var id = UUID()
     var name: String
     var imageName: String

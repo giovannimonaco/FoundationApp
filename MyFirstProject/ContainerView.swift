@@ -15,7 +15,7 @@ struct ContainerView: View {
                     Image(systemName: "person.fill")
                     Text("Learners")
                 }
-            TeamsListView()
+            HTeamsListView()
                 .tabItem {
                     Image(systemName: "person.3.fill")
                     Text("Teams")

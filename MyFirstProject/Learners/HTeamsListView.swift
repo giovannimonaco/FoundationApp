@@ -1,5 +1,5 @@
 //
-//  TeamsListView.swift
+//  HTeamsListView.swift
 //  MyFirstProject
 //
 //  Created by Giovanni Monaco on 18/10/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TeamsListView: View {
+struct HTeamsListView: View {
     
     @EnvironmentObject var myData : ModelData
     @State private var searchText = ""
@@ -21,20 +21,20 @@ struct TeamsListView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack {
+            ScrollView(.horizontal) {
+                HStack(spacing: 10.0) {
                     ForEach(filteredTeams) { team in
                         ZStack(alignment: .bottomLeading) {
                             Image(team.imageName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .shadow(radius: 10)
-                                .frame(height: 200)
+                                .frame(width: 300)
                             Rectangle()
                                 .fill(
                                     LinearGradient(colors: [.clear, .black.opacity(0.8)], startPoint: .top, endPoint: .bottom)
                                 )
-                                .frame(height: 200)
+                                .frame(width: 300)
                             VStack(alignment: .leading) {
                                 Text(team.name)
                                     .font(.title)
@@ -48,9 +48,9 @@ struct TeamsListView: View {
                             .padding()
                         }
                         .cornerRadius(20)
-                        .padding(.horizontal)
                     }
                 }
+                .padding()
             }
             .navigationBarTitle("Teams")
             .searchable(text: $searchText)
@@ -58,9 +58,9 @@ struct TeamsListView: View {
     }
 }
 
-struct TeamsListView_Previews: PreviewProvider {
+struct HTeamsListView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamsListView()
+        HTeamsListView()
             .environmentObject(ModelData())
     }
 }
