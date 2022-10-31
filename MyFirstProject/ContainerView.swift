@@ -15,7 +15,7 @@ struct ContainerView: View {
                     Image(systemName: "person.fill")
                     Text("Learners")
                 }
-            HTeamsListView()
+            VTeamsListView()
                 .tabItem {
                     Image(systemName: "person.3.fill")
                     Text("Teams")
@@ -27,5 +27,6 @@ struct ContainerView: View {
 struct ContainerView_Previews: PreviewProvider {
     static var previews: some View {
         ContainerView()
+            .environmentObject(ModelData())
     }
 }

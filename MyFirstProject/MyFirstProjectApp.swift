@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let DEBUG = false
+
 @main
 struct MyFirstProjectApp: App {
     
@@ -18,6 +20,7 @@ struct MyFirstProjectApp: App {
                 .environmentObject(sharedData)
         }
     }
+    
 }
 
 

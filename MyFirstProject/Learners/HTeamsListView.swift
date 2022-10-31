@@ -9,12 +9,12 @@ import SwiftUI
 
 struct HTeamsListView: View {
     
-    @EnvironmentObject var myData : ModelData
+    @EnvironmentObject var model : ModelData
     @State private var searchText = ""
     
     var filteredTeams: [Team] {
-        if searchText.isEmpty { return myData.teams }
-        return myData.teams.filter { team in
+        if searchText.isEmpty { return model.teams }
+        return model.teams.filter { team in
             team.name.lowercased().contains(searchText.lowercased())
         }
     }

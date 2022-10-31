@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewLearnerView: View {
     
-    @EnvironmentObject var myData : ModelData
+    @EnvironmentObject var model : ModelData
     
     @State var name: String = ""
     @State var surname: String = ""
@@ -55,7 +55,7 @@ struct NewLearnerView: View {
     
     private func addLearner(name: String, surname: String, favouriteColor: Color, description: String) {
         let newLearner = Learner(name: name, surname: surname, favouriteColor: favouriteColor, description: description)
-        myData.add(learner: newLearner)
+        model.add(learner: newLearner)
         
     }
     

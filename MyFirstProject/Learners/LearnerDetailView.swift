@@ -16,7 +16,7 @@ struct LearnerDetailView: View {
             learner.favouriteColor
                 .opacity(0.2)
                 .ignoresSafeArea()
-            VStack {
+            VStack(spacing: 12.0) {
                 if let imageName = learner.imageName {
                     Image(imageName)
                         .resizable()
@@ -24,7 +24,6 @@ struct LearnerDetailView: View {
                         .frame(width: 280, height: 280)
                         .clipShape(Circle())
                         .shadow(radius: 10)
-                        .padding()
                 } else {
                     Image(systemName: "person.fill")
                         .resizable()
@@ -32,7 +31,6 @@ struct LearnerDetailView: View {
                         .frame(width: 140, height: 140)
                         .foregroundColor(learner.favouriteColor)
                         .opacity(0.6)
-                        .padding()
                 }
                 HStack {
                     Text(learner.name)
@@ -43,8 +41,11 @@ struct LearnerDetailView: View {
                         .bold()
                 }
                 .foregroundColor(learner.favouriteColor)
-                Text(learner.description ?? "")
+                Text(learner.description?.replacingOccurrences(of: " - ", with: "\n- ") ?? "")
+                    .font(.footnote)
+                    .multilineTextAlignment(.center)
             }
+            .padding()
         }
         .toolbar {
             ToolbarItem {

@@ -9,14 +9,14 @@ import SwiftUI
 
 struct LearnersListView: View {
     
-    @EnvironmentObject var myData : ModelData
+    @EnvironmentObject var model : ModelData
     @State var newLearnerViewisPresented = false
     @State private var searchText = ""
     
     
     var orderedLearners: [Learner] {
         get {
-            myData.learners
+            model.learners
                 .sorted { learner1, learner2 in
                     learner1.name <= learner2.name
                 }
@@ -25,7 +25,7 @@ struct LearnersListView: View {
                 }
         }
         set {
-            myData.learners = newValue
+            model.learners = newValue
         }
     }
     
@@ -37,7 +37,7 @@ struct LearnersListView: View {
             }
         }
         set {
-            myData.learners = newValue
+            model.learners = newValue
         }
     }
     
@@ -50,17 +50,17 @@ struct LearnersListView: View {
                     }
                     .swipeActions(edge: .leading, content: {
                         Button(role: .none) {
-                            myData.star(learner: learner)
+                            model.star(learner: learner)
                         } label: {
-                            Label("Star", systemImage: "star.fill")
+                            Label("", systemImage: "star.fill")
                         }
                         .tint(.yellow)
                     })
                     .swipeActions(edge: .trailing, content: {
                         Button(role: .destructive) {
-                            myData.delete(learner: learner)
+                            model.delete(learner: learner)
                         } label: {
-                            Label("Delete", systemImage: "trash")
+                            Label("", systemImage: "trash")
                         }
                         .tint(.red)
                         
@@ -80,6 +80,16 @@ struct LearnersListView: View {
                         Image(systemName: "plus")
                     }
                     
+                }
+                if DEBUG  {
+                    ToolbarItem {
+                        Button {
+                            model.reset()
+                        } label: {
+                            Image(systemName: "lifepreserver")
+                        }
+                        
+                    }
                 }
             }
             .searchable(text: $searchText)

@@ -13,11 +13,17 @@ struct LearnerRowView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "person.crop.square.fill")
-                .resizable()
-                .frame(width:30, height: 30)
-                .foregroundColor(learner.favouriteColor)
-                .padding(.trailing, 6.0)
+                Image(learner.imageName ?? "")
+                    .resizable()
+                    .frame(width: 58, height: 58)
+                    .foregroundColor(learner.favouriteColor)
+                    .mask{ Circle() }
+                    .overlay(
+                        Circle()
+                            .stroke(learner.favouriteColor, lineWidth: 4)
+                        )
+                    .shadow(radius: 2.0)
+                    .padding(.trailing, 8.0)
             VStack(alignment: .leading) {
                 Text(learner.name)
                     .font(.title3)
